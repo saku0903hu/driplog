@@ -1,0 +1,107 @@
+/* DripLog pages: the app's café colors (Assets.xcassets), light and dark. */
+:root {
+  color-scheme: light dark;
+  --paper: #F6EFE4;
+  --card: #FFFBF5;
+  --crema: #ECDDC7;
+  --espresso: #3B281C;
+  --accent: #8B5A2B;
+  --muted: rgba(59, 40, 28, 0.68);
+  --serif: "Iowan Old Style", "Palatino", "Hiragino Mincho ProN", "Songti TC", "Songti SC", Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "PingFang TC", "PingFang SC", "Noto Sans JP", "Noto Sans TC", "Noto Sans SC", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #17110D;
+    --card: #251B15;
+    --crema: #3B2C21;
+    --espresso: #F2E6D6;
+    --accent: #C68B59;
+    --muted: rgba(242, 230, 214, 0.68);
+  }
+}
+:lang(ja) { --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif; }
+:lang(zh-Hant) { --sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", sans-serif; --serif: "Songti TC", serif; }
+:lang(zh-Hans) { --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", sans-serif; --serif: "Songti SC", serif; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--espresso);
+  font: 17px/1.75 var(--sans);
+}
+header, main, footer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+}
+a { color: var(--accent); }
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--espresso);
+  text-decoration: none;
+  font: 700 22px/1 var(--serif);
+}
+.bean { width: 28px; height: 28px; fill: var(--accent); }
+.langs { display: flex; flex-wrap: wrap; gap: 6px; }
+.langs a {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--crema);
+  color: var(--espresso);
+  font-size: 14px;
+  text-decoration: none;
+}
+.langs a[aria-current="page"] { background: var(--espresso); color: var(--paper); }
+h1 {
+  margin: 40px 0 8px;
+  font: 700 34px/1.25 var(--serif);
+}
+h2 {
+  margin: 0 0 8px;
+  font: 700 21px/1.4 var(--serif);
+}
+h3 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 700;
+}
+p { margin: 0 0 12px; }
+p:last-child { margin-bottom: 0; }
+.lead { font-size: 18px; }
+.updated { color: var(--muted); font-size: 15px; }
+.card {
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 20px;
+  background: var(--card);
+}
+.qa + .qa { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--crema); }
+ul { margin: 12px 0 16px; padding-left: 1.2em; }
+li + li { margin-top: 8px; }
+li::marker { color: var(--accent); }
+a[href^="mailto:"] { overflow-wrap: anywhere; }
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 8px;
+  padding-bottom: 40px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.app .brand { margin-bottom: 12px; }
+.links { display: flex; gap: 16px; }
